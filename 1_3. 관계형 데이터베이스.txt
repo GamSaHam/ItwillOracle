@@ -1,0 +1,73 @@
+
+1. 관계형 데이터 베이스
+    - 데이터베이스란
+        * 중복을 최소화 하고 구조화하여 검색 갱신을 효율적으로 할 수 있도록 모아놓은 데이터들의 집합
+    
+    - 데이터베이스의 목적
+        * 중복 최소화
+        * 공유
+        * 보안
+        * 무결성 유지
+        * 독립성 
+
+    - 데이터베이스 용어 혼용
+        * 데이터베이스 관리시스템 (DBMS)
+            : 데이터베이스를 운영하는 소프트웨어
+        * 실제 DBMS 와 데이터 베이스를 혼용
+    
+2. 관계형 데이터베이스 개념
+    - DBMS 종류
+        * Oracle
+        * MySQL
+        * MsSQL
+        * ...
+
+    - 웹 호스팅
+        * JSP, Oracle 로 호스팅을 하지 않는다.
+     
+    - 관계형 데이터 모델이란
+        * 개체
+        * 속성
+        * 관계
+    
+    - 관계형 데이터 베이스는 테이블로 구성되어 있다.
+        * 행 (row)
+        * 열 (colmn)
+        * PK
+        * FK
+        * 널(null)
+
+    - 필드(레코드, 행), 속성(어트리뷰트, 컬럼)
+    - 추상화 된것을 모델링 한다.(테이블화 한다.)
+    - ER - Diagram
+    - 제 3정규화 까지
+
+
+3. SQL
+    - 데이터 베이스 언어
+    - ANSI-SQL, T-SQL MS, PL-SQL 오라클
+    - SQL - 89 : 1982년 ANSI의 SQL 표준을 보완 빛 확장
+    - SQL - 92(SQL-2) : SQL-89 를 대폭 보완, 많은 상용 DBMS의 SQL에서 준수함.
+    - SQL - 99(SQL-3) : 1999년 SQL-2를 확장/보완하고 객체지향 개념을 도입한 SQL, MS-SQL 2005, IBM DB2 9 , Oracle 10g 모두 준수
+
+4. SQL 문장 종류
+    - SELECT : 데이터 베이스 검색
+    - INSERT, UPDATE, DELETE , MERGE (DML : Data Manipulation Language)
+    - CREATE, ALTER, DROP, RENAME, TRUNCATE (DDL, Data Definition Language)
+    - COMMIT, ROLLBACK, SAVEPOINT 
+    - GRANT, REVOKE (DCL: Data Control Language)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
