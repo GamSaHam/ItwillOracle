@@ -1,6 +1,4 @@
 
-SELECT * FROM TABS;
-
 -- FOREIGN KEY : 다른 테이블에 저장된 컬럼값을 참조하여 잘못된 데이터 저장을 방지하기
 --              위한 기능을 가지고 있는 제약조건 => 테이블들의 잘못된 JOIN을 방지하기 위해 사용
 --  => FOREIGN KEY 제약조건의 컬럼이 참조할 수 있는 다른 테이블의 컬럼은 반드시 PK 제약
@@ -69,13 +67,12 @@ INSERT INTO TRAINEE2 VALUES(3000, '전우치',30);
 
 -- SUBJECT 테이블의 SNO 컬럼의 컬럼값으로 존재하지 않는 SCODE 컬럼값을 저장할 경우 에러 발생
 INSERT INTO TRAINEE2 VALUES(4000, '일지매',40); -- 일지매 에러 - PARANT KEY NOT FOUND
-
 COMMIT;
 
 SELECT * FROM TRAINEE2;
 
 -- FK 제약조건에 의해 JOIN 조건에 맞지 않는 수강생은 존재하지 않는다.
-SELECT TNO,TNAME,SNAME FROM TRAINEE2 T JOIN SUBJECT S ON T.SCODE = S.SNO; 
+SELECT TNO,TNAME,SNAME FROM TRAINEE2 T JOIN SUBJECT S ON T.SCODE = S.SNO;
 
 -- SUBJECT 테이블에서 과목코드 10인 과목정보 삭제
 -- FOREGIN KEY 에 의해서 데이터가 보호 받는다.
@@ -114,9 +111,9 @@ CREATE TABLE SAWON2(NO NUMBER(4),NAME VARCHAR2(20),PAY NUMBER(8)
 SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCH_CONDITION
         FROM USER_CONSTRAINTS WHERE TABLE_NAME = 'SAWON2';
 
-
 INSERT INTO SAWON2 VALUES(1000,'홍길동',5000000);
 INSERT INTO SAWON2 VALUES(2000,'임꺽정',3000000);
+
 -- 전우치의 급여 : 1000만원 - 입력 오류 : 100만원 => CHECK 제약조건에 의해 저장 불가능
 INSERT INTO SAWON2 VALUES(3000,'전우치',1000000);  -- 에러 발생
 INSERT INTO SAWON2 VALUES(3000,'전우치',10000000);
@@ -124,12 +121,10 @@ COMMIT;
 
 SELECT NO,NAME,TO_CHAR(PAY,'L999,999,990') PAY FROM SAWON2;
 
-
 -- 테이블 삭제 => 테이블에 저장된 모든 데이터도 같이 삭제
 -- 형식) DROP TABLE 테이블명;
 -- USER_TABES 유저 딕션너리에서 현재 로그인 사용자가 사용 가능한 테이블 목록 확인
 SELECT TABLE_NAME FROM TABS ORDER BY TABLE_NAME;
-
 
 -- USER1 테이블 삭제
 DROP TABLE USER1;
@@ -137,15 +132,12 @@ DROP TABLE USER1;
 SELECT TABLE_NAME FROM TABS ORDER BY TABLE_NAME;
 
 -- 오라클에서는 삭제된 테이블을 복구 할수 있다.
-
 -- 테이블 목록 확인
 --  => BIN... : 오라클 휴지통에 존재하는 객체
 SELECT * FROM TAB; -- TAB VIEW에서 확인 => 삭제된 테이블 목록 확인
 
-
 -- 오라클 휴지통(RECYCLEBIN)에 존재하는 객체 목록 확인
 SHOW RECYCLEBIN;
-
 
 -- 오라클 휴지통에 존재하는 객체 복구
 FLASHBACK TABLE USER1 TO BEFORE DROP;
@@ -227,9 +219,8 @@ ALTER TABLE EMPLOYEE MODIFY (ENO VARCHAR2(4));
 
 DESC EMPLOYEE;
 
-
 -- EMPLOYEE 테이블에 사원정보 저장
-INSERT INTO EMPLOYEE VALUES('1000','홍길동','111-1111','서울시 강남구 역삼동');
+INSERT INTO EMPLOYEE VALUES(1000,'홍길동','111-1111','서울시 강남구 역삼동');
 COMMIT;
 
 SELECT * FROM EMPLOYEE;
@@ -261,6 +252,7 @@ SELECT * FROM EMPLOYEE;
 -- EMPLOYEE 테이블의 ADDRESS 컬럼 사용 제한
 -- 컬럼이 삭제 된것은 아니고 눈에만 안보이도록 한 것이다.
 ALTER TABLE EMPLOYEE SET UNUSED(ADDRESS);
+
 
 DESC EMPLOYEE; -- 어드레스 없다
 
