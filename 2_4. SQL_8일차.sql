@@ -307,7 +307,7 @@ DECLARE
     
     -- 부서명을 저장하기 위한 변수 선언
     VDNAME VARCHAR2(20) := NULL;
-
+    
 BEGIN
     SELECT * INTO VEMP FROM EMP WHERE ENAME = 'SCOTT';
     
@@ -494,11 +494,11 @@ END;
 --  명령; 명령; ... END LOOP;
 -- INDEX_COUNTER : LOWER_BOUND부터 UPPER_BOUND까지 1씩 증가되는 값을 저장하기
 --  위한 변수
-
 -- 1~10 범위에 정수 합계를 계산하여 출력하는 PL/SQL 작성
+
 DECLARE
+
     TOT NUMBER(2) := 0;
-    
     
 BEGIN
     
