@@ -1,0 +1,13 @@
+dos> sqlplus /nolog
+
+sql> connect sys/sys as sysdba;
+sql> show user;
+sql> @C:\scott_create.sql
+sql> show user;
+sql> select table_name from tabs;
+sql> select * from tab;
+sql> DESC EMP;
+sql> DESC DEPT;
+sql> SELECT * FROM EMP;
+sql> SELECT * FROM DEPT;
+
